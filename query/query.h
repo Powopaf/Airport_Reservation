@@ -1,4 +1,4 @@
-#ifdef QUERY_H
+#ifndef QUERY_H
 #define QUERY_H
 
 #include <string>
