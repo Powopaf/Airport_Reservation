@@ -1,4 +1,5 @@
 #include "airline.h"
+#include <iostream>
 #include <string>
 
 Airline::Airline(std::string name, int id, int nb_passengers, int limit_passengers) 
@@ -26,5 +27,7 @@ void Airline::set_nb_paasengers(int passenger) {
 }
 
 void Airline::display() {
-    // TODO write display function
+    std::cout << "Name: " << name << std::endl;
+    std::cout << "ID: " << id << std::endl;
+    std::cout << "Number of passengers: " << nb_passengers << "/" << limit_passengers << std::endl;
 }
