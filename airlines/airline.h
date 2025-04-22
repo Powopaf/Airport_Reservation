@@ -16,7 +16,7 @@ class Airline {
         int get_nb_passengers() const;
         int get_limit_passengers() const;
         void set_nb_paasengers(int passenger=1);
-
+        void display();
 };
 
 #endif

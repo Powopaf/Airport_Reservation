@@ -24,3 +24,7 @@ int Airline::get_limit_passengers() const {
 void Airline::set_nb_paasengers(int passenger) {
     nb_passengers = passenger;
 }
+
+void Airline::display() {
+    // TODO write display function
+}

@@ -1,19 +1,22 @@
 #include "booking/airline.h"
 #include "query/query.h"
+#include <cstring>
 #include <iostream>
+#include <string>
 #include <vector>
 
-int main() {
-    std::vector<Airline> flights = parser("flights/flights");
-    std::cout << flights[0].get_name() << std::endl;
-    std::cout << flights[0].get_id() << std::endl;
-    std::cout << flights[0].get_nb_passengers() << std::endl;
-    std::cout << flights[0].get_limit_passengers() << std::endl;
-    std::cout << flights[1].get_name() << std::endl;
-    std::cout << flights[1].get_id() << std::endl;
-    std::cout << flights[1].get_nb_passengers() << std::endl;
-    std::cout << flights[1].get_limit_passengers() << std::endl;
-    std::cout << flights[2].get_name() << std::endl;
-    std::cout << flights[2].get_id() << std::endl;
-    return EXIT_SUCCESS;
+const std::string data_flights = "flights/flights";
+
+int main(int argc, char* argv[]) {
+    std::vector<Airline> flights = parser(data_flights);
+    if (argc == 4 && std::strcmp(argv[1], "book") == 0) {
+        return EXIT_SUCCESS;
+    }
+    if (argc >= 2 && argc <= 3 && std::strcmp(argv[1], "check")) {
+        return EXIT_SUCCESS;
+    }
+    if (argc == 4 && std::strcmp(argv[1], "cancel")) {
+        return EXIT_SUCCESS;
+    }
+    return EXIT_FAILURE;
 }
