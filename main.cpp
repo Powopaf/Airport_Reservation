@@ -1,15 +1,15 @@
-#include "booking/airline.h"
 #include "query/query.h"
 #include <cstring>
-#include <iostream>
-#include <string>
 #include <vector>
+#include "airlines/airline.h"
+#include <iostream>
 
-const std::string data_flights = "flights/flights";
+const char data_flights[16] = "flights/flights";
 
 int main(int argc, char* argv[]) {
     std::vector<Airline> flights = parser(data_flights);
     if (argc == 4 && std::strcmp(argv[1], "book") == 0) {
+        
         return EXIT_SUCCESS;
     }
     if (argc >= 2 && argc <= 3 && std::strcmp(argv[1], "check")) {

@@ -6,7 +6,7 @@
 #include <stdexcept>
 #include <vector>
 #include <string>
-#include "../booking/airline.h"
+#include "../airlines/airline.h"
 
 int stringToInt(std::string s) {
     int res = 0;

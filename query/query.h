@@ -3,8 +3,9 @@
 
 #include <string>
 #include <vector>
-#include "../booking/airline.h"
+#include "../airlines/airline.h"
 
+int stringToInt(std::string s);
 std::vector<Airline> parser(std::string path);
 
 #endif
