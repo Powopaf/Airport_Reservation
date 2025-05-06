@@ -8,7 +8,8 @@ const char data_flights[16] = "flights/flights";
 
 int main() {
     std::vector<Airline> flights = parser(data_flights);
-    char i = '.';
-    while
+    for (int i = 0; i < flights.size(); i++) {
+        flights[i].display();
+    }
     return EXIT_SUCCESS;
 }

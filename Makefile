@@ -2,13 +2,13 @@ CC=g++
 FLAGS=-Wall -Wextra -g
 CFLAGS=-g
 SRC= main.cpp \
-	 booking/airline.cpp \
-	 booking/booking.cpp \
+	 airlines/airline.cpp \
+	 airlines/booking.cpp \
 	 query/query.cpp
 OBJ=$(SRC:.cpp=.o)
 
 debug: $(OBJ)
-	$(CC) -o arline.out $(CFLAGS) $+
+	$(CC) -o airline.out $(CFLAGS) $+
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@

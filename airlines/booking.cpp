@@ -6,7 +6,7 @@ void add(std::vector<Airline> flights, int passengers, int id) {
     for (int i = 0; i < flights.size(); i++) {
         if (flights[i].get_id() == id) {
             if (flights[i].get_nb_passengers() + passengers <= flights[i].get_limit_passengers()) {
-               flights[i].set_nb_paasengers(passengers);
+               flights[i].set_nb_pasengers(passengers);
             }
         break;
         }
@@ -17,7 +17,7 @@ void remove(std::vector<Airline> flights, int passengers, int id) {
     for (int i = 0; i < flights.size(); i++) {
         if (flights[i].get_id() == id) {
             if (flights[i].get_nb_passengers() - passengers >= 0) {
-                flights[i].set_nb_paasengers(-passengers);
+                flights[i].set_nb_pasengers(-passengers);
             }
             break;
         }
