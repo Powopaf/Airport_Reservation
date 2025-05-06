@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "fstream"
 #include "airline.h"
 
 void add(std::vector<Airline>& flights, int passengers, int id) {
@@ -72,5 +73,19 @@ void check(std::vector<Airline> flights, int id, std::string time, std::string d
 }
 
 void save(std::string path, std::vector<Airline> flights) {
-
+    std::ofstream ofs(path);
+    if (!ofs) {
+        std::cerr << "Error: could not open \"" << path << "\" to save data" << std::endl;
+        return;
+    }
+    for (const auto &f : flights) {
+        ofs
+          << f.get_name()             << ' '
+          << f.get_id()               << ' '
+          << f.get_nb_passengers()    << ' '
+          << f.get_limit_passengers() << ' '
+          << f.get_time()             << ' '
+          << f.get_destination()
+          << '\n';
+    }
 }
