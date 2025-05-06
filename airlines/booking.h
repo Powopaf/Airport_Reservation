@@ -5,8 +5,8 @@
 #include <vector>
 #include "airline.h"
 
-void add(std::vector<Airline> flights, int passengers, int id);
-void remove(std::vector<Airline> flights, int passengers, int id);
+void add(std::vector<Airline>& flights, int passengers, int id);
+void remove(std::vector<Airline>& flights, int passengers, int id);
 void check(std::vector<Airline> flights, int id=-1);
 void save(std::string path, std::vector<Airline> flights);
 

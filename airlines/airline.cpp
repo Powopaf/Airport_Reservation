@@ -34,7 +34,7 @@ std::string Airline::get_time() const {
 }
 
 void Airline::set_nb_pasengers(int passenger) {
-    nb_passengers = passenger;
+    nb_passengers = nb_passengers + passenger;
 }
 
 void Airline::display() {
