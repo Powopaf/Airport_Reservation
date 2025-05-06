@@ -49,45 +49,22 @@ int stringToInt(std::string s) {
     return res;
 }
 
-
-std::array<std::string, 4> parseline(std::string line) {
-    std::array<std::string, 4> res;
-    std::istringstream iss(line);
-    std::string name, id, ratio;
-    if (!(iss >> name >> id >> ratio)) {
-        throw std::invalid_argument("Invalid format in line: " + line);
-    }
-    auto slash = ratio.find('/');
-    if (slash == std::string::npos) {
-        throw std::invalid_argument("Invalid format in line: " + line);
-    }
-    std::string nb1 = ratio.substr(0, slash);
-    std::string nb2 = ratio.substr(slash + 1);
-    res[0] = name;
-    res[1] = id;
-    res[2] = nb1;
-    res[3] = nb2;
-    return res;
-}
-
-
-
 std::vector<Airline> parser(const std::string path) {
+    std::vector<Airline> res;
     std::ifstream file(path);
     if (!file) {
-        throw std::runtime_error("Cannot open file: " + path);
+        std::cout << "No file: " << path << std::endl;
     }
-    std::vector<Airline> res;
     std::string line;
     while (std::getline(file, line)) {
-        if (line.empty()) {
-            continue;
+        std::istringstream iss(line);
+        std::vector<std::string> tokens;
+        std::string words;
+        while (iss >> words) {
+            tokens.push_back(words);
         }
-        std::array<std::string, 4> parts = parseline(line);
-        res.push_back(Airline(parts[0],
-                    stringToInt(parts[1]),
-                    stringToInt(parts[2]),
-                    stringToInt(parts[3])));
+        res.push_back(Airline(tokens[0], stringToInt(tokens[1]), stringToInt(tokens[2]),
+                    stringToInt(tokens[3]), tokens[4], tokens[5]));
     }
     return res;
 }

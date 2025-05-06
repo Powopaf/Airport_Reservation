@@ -6,17 +6,9 @@
 
 const char data_flights[16] = "flights/flights";
 
-int main(int argc, char* argv[]) {
+int main() {
     std::vector<Airline> flights = parser(data_flights);
-    if (argc == 4 && std::strcmp(argv[1], "book") == 0) {
-        
-        return EXIT_SUCCESS;
-    }
-    if (argc >= 2 && argc <= 3 && std::strcmp(argv[1], "check")) {
-        return EXIT_SUCCESS;
-    }
-    if (argc == 4 && std::strcmp(argv[1], "cancel")) {
-        return EXIT_SUCCESS;
-    }
-    return EXIT_FAILURE;
+    char i = '.';
+    while
+    return EXIT_SUCCESS;
 }
