@@ -8,15 +8,6 @@ const char data_flights[16] = "flights/flights";
 
 int main() {
     std::vector<Airline> flights = parser(data_flights);
-    /*
-    for (int i = 0; i < flights.size(); i++) {
-        flights[i].display();
-    }
-    */
-    add(flights, 2, 123);
-    check(flights, 123);
-    remove(flights, 1, 123);
-    check(flights, 123);
-    //check(flights);
+    check(flights, -1, "", "Paris");
     return EXIT_SUCCESS;
 }

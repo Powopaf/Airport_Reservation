@@ -1,9 +1,7 @@
 #include "query.h"
-#include <array>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-#include <stdexcept>
 #include <vector>
 #include <string>
 #include "../airlines/airline.h"
@@ -64,7 +62,7 @@ std::vector<Airline> parser(const std::string path) {
             tokens.push_back(words);
         }
         res.push_back(Airline(tokens[0], stringToInt(tokens[1]), stringToInt(tokens[2]),
-                    stringToInt(tokens[3]), tokens[4], tokens[5]));
+                    stringToInt(tokens[3]), tokens[5], tokens[4]));
     }
     return res;
 }

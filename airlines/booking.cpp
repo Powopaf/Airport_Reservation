@@ -43,17 +43,29 @@ void remove(std::vector<Airline>& flights, int passengers, int id) {
     }
 }
 
-void check(std::vector<Airline> flights, int id) {
-    if (id == -1) {
+void check(std::vector<Airline> flights, int id, std::string time, std::string dest) {
+    long unsigned int i = 0;
+    if (id != -1) {
+        while (i < flights.size() && flights[i].get_id() != id) {
+            i++;
+        }
+        if (i >= flights.size()) {
+            std::cout << "No flight with id: " << id << std::endl;
+            return;
+        }
+        flights[i].display();
+    }
+    else if (!time.empty()) {
         for (long unsigned int i = 0; i < flights.size(); i++) {
-            flights[i].display();
+            if (flights[i].get_time() == time) {
+                flights[i].display();
+            }
         }
     }
     else {
         for (long unsigned int i = 0; i < flights.size(); i++) {
-            if (flights[i].get_id() == id) {
+            if (flights[i].get_destination() == dest) {
                 flights[i].display();
-                break;
             }
         }
     }
